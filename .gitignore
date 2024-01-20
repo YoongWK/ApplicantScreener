@@ -1,0 +1,5 @@
+# Ignore .venv file
+.venv
+
+# Ignore secrets.txt file
+secrets.txt

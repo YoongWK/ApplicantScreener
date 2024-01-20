@@ -1,0 +1,348 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ProcessApplication" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/intelligentocr" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uisad="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:uisape="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.PDF.ExtractPDFText;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:uisascb="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentType178Dd0B3D42547D8965DB437B28Eb709.Bundle;assembly=CustomGptDocumentTyp.SlJf32iHFOB1Hk5kI3uGgRO2" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="BreakTriggerScopeInArgument" Type="InArgument(x:String)" />
+    <x:Property Name="in_ilr_FileReference" Type="InArgument(upr:ILocalResource)" />
+    <x:Property Name="in_dt_JobPostings" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="in_str_AppliedPosition" Type="InArgument(x:String)" />
+    <x:Property Name="out_objarr_ApplicantDetails" Type="OutArgument(s:Object[])" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>775,3179.5</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.Outlook.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.DocumentClassification</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Dom</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.DataExtraction</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Results</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentType178Dd0B3D42547D8965DB437B28Eb709.Bundle</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.PDF.ExtractPDFText</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.PDF</x:String>
+      <x:String>System.Management.Automation</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>Microsoft.Office.Interop.Outlook</AssemblyReference>
+      <AssemblyReference>System.Reflection.MetadataLoadContext</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.StudioWeb.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentProcessing.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentUnderstanding.ML.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>C0A9EDFF1F8_generate.jsdmq3fJL0J1ycOuQ5Obeb1</AssemblyReference>
+      <AssemblyReference>CustomGptDocumentTyp.SlJf32iHFOB1Hk5kI3uGgRO2</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Management.Automation</AssemblyReference>
+      <AssemblyReference>ChatGPT.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Web</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>CB91545DE9F_generate.NBRt22GXksD1lagrxGhr6e3</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="This workflow determines the applicant resume match score with the job description for the applied position, extracts applicant details from the resume, &amp; move the applicant's resume from the Attachments folder to Resume Folder." DisplayName="Sequence - Process Application" sap:VirtualizedContainerService.HintSize="648,3114.5" sap2010:WorkflowViewState.IdRef="Sequence_47">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="str_ResumeContents" />
+      <Variable x:TypeArguments="x:String" Name="str_JobDescription" />
+      <Variable x:TypeArguments="sco:Collection(x:String)" Name="strcol_PSOutput" />
+      <Variable x:TypeArguments="x:Int32" Name="int_ShortlistingScore" />
+      <Variable x:TypeArguments="x:String" Name="str_ApplicationStatus" />
+      <Variable x:TypeArguments="uisad:IDocumentData(uisascb:CustomGptDocumentType178Dd0B3D42547D8965DB437B28Eb709)" Name="idd_ExtractedDetails" />
+      <Variable x:TypeArguments="x:String" Name="str_ResumePath" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uisape:ExtractPDFText FilePassword="{x:Null}" sap2010:Annotation.AnnotationText="Extract text from resume" ApplyOcr="True" DisplayName="Extract PDF Text - Resume" sap:VirtualizedContainerService.HintSize="586,124" sap2010:WorkflowViewState.IdRef="ExtractPDFText_2" OcrEngine="UIPATH_DOCUMENT_OCR" PdfFile="[in_ilr_FileReference]" Text="[str_ResumeContents]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uisape:ExtractPDFText>
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dt_JobPostings]" DisplayName="For Each Row in Data Table - dt_JobPostings" sap:VirtualizedContainerService.HintSize="586,828" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="552,636" sap2010:WorkflowViewState.IdRef="Sequence_41">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If Condition="[row(&quot;Position&quot;).ToString = in_str_AppliedPosition]" DisplayName="If - Position " sap:VirtualizedContainerService.HintSize="510,548" sap2010:WorkflowViewState.IdRef="If_7">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="476,363" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Assign - Job Description For Applied Position" sap:VirtualizedContainerService.HintSize="434,85" sap2010:WorkflowViewState.IdRef="Assign_12">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[str_JobDescription]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[row("Description").ToString]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,85" sap2010:WorkflowViewState.IdRef="Assign_13">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[int_ShortlistingScore]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[CInt(row("Shortlisting Score"))]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:Break sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="Break_1" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_43" />
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+    </ui:ForEachRow>
+    <Assign sap2010:Annotation.AnnotationText="Perform text preprocessing on resume content by keeping only letters, removing extra spaces, &amp; converting to lower case" DisplayName="Assign - Text Preprocessing For str_ResumeContents" sap:VirtualizedContainerService.HintSize="586,133" sap2010:WorkflowViewState.IdRef="Assign_23">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[str_ResumeContents]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(System.Text.RegularExpressions.Regex.Replace(str_ResumeContents, "[^a-z A-Z]", " "), "\s+", " ").ToLower]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <Assign sap2010:Annotation.AnnotationText="Perform text preprocessing on job description by keeping only letters, removing extra spaces, &amp; converting to lower case" DisplayName="Assign - Text Preprocessing For str_JobDescription" sap:VirtualizedContainerService.HintSize="586,133" sap2010:WorkflowViewState.IdRef="Assign_24">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[str_JobDescription]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(System.Text.RegularExpressions.Regex.Replace(str_JobDescription, "[^a-z A-Z]", " "), "\s+", " ").ToLower]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <ui:InvokePowerShell x:TypeArguments="x:String" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Activate Python virtual environment &amp; run the resumeScorer.py Python script to obtain the match score based on resume content &amp; job description" CommandText="[&quot;&#xD;&#xA;Param(&#xD;&#xA;[Parameter(Mandatory=$true)] [string]$CurrentDirectory,&#xD;&#xA;[Parameter(Mandatory=$true)] [string]$PythonFileName,&#xD;&#xA;[Parameter(Mandatory=$true)] [string]$CV,&#xD;&#xA;[Parameter(Mandatory=$true)] [string]$JobDescription&#xD;&#xA;)&#xD;&#xA;cd $CurrentDirectory&#xD;&#xA;.venv\Scripts\activate&#xD;&#xA;python $PythonFileName &quot;&quot;&quot;&quot;$CV&quot;&quot;&quot;&quot; &quot;&quot;&quot;&quot;$JobDescription&quot;&quot;&quot;&quot;&#xD;&#xA;&quot;]" DisplayName="Invoke Power Shell" sap:VirtualizedContainerService.HintSize="586,148" sap2010:WorkflowViewState.IdRef="InvokePowerShell`1_2" IsScript="True" Output="[strcol_PSOutput]" PowerShellProcess="PowerShellCore">
+      <ui:InvokePowerShell.Parameters>
+        <InArgument x:TypeArguments="x:String" x:Key="CurrentDirectory">[Environment.CurrentDirectory]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="PythonFileName">resumeScorer.py</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="CV">[str_ResumeContents]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="JobDescription">[str_JobDescription]</InArgument>
+      </ui:InvokePowerShell.Parameters>
+      <ui:InvokePowerShell.PowerShellVariables>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:InvokePowerShell.PowerShellVariables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InvokePowerShell>
+    <If Condition="[CInt(strcol_PSOutput.First) &gt;= int_ShortlistingScore]" DisplayName="If - Match Score Greater Than Or Equal To Shortlisting Score" sap:VirtualizedContainerService.HintSize="586,531" sap2010:WorkflowViewState.IdRef="If_8">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="476,173" sap2010:WorkflowViewState.IdRef="Sequence_45">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="Assign - " sap:VirtualizedContainerService.HintSize="434,85" sap2010:WorkflowViewState.IdRef="Assign_14">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_ApplicationStatus]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">Shortlisted</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="476,173" sap2010:WorkflowViewState.IdRef="Sequence_46">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="434,85" sap2010:WorkflowViewState.IdRef="Assign_15">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_ApplicationStatus]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">Not Shortlisted</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Else>
+    </If>
+    <p:ExtractDocumentDataWithDocumentData x:TypeArguments="uisascb:CustomGptDocumentType178Dd0B3D42547D8965DB437B28Eb709" DocumentBounds="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" ExtractorDocumentType="{x:Null}" ExtractorResult="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" sap2010:Annotation.AnnotationText="Extract applicant name, email, phone number, highest qualification, qualifcation field, latest company, latest position, technical skills, &amp; soft skills from resume" DisplayName="Extract Document Data - Resume" DocType="Generative" ExtractionResults="[idd_ExtractedDetails]" FileInput="[in_ilr_FileReference]" sap:VirtualizedContainerService.HintSize="586,341" sap2010:WorkflowViewState.IdRef="ExtractDocumentDataWithDocumentData`1_2" ProjectId="00000000-0000-0000-0000-000000000000" Prompt="{}{&quot;Name&quot;:&quot;What is the name of the applicant?&quot;,&quot;Email&quot;:&quot;What is the email of the applicant?&quot;,&quot;Phone Number&quot;:&quot;What is the phone number of the applicant without country code and spaces?&quot;,&quot;Highest Qualification&quot;:&quot;What is the highest qualification of the applicant? Respond with only the following fixed answers: PSLE, O' Level, A' Level, Diploma, Bachelor, Master, Doctorate, Other, Not Reported.&quot;,&quot;Qualification Field&quot;:&quot;What is the qualification field for the applicant?&quot;,&quot;Latest Company&quot;:&quot;What is the latest company that the applicant worked at?&quot;,&quot;Latest Position&quot;:&quot;What is the position held in the latest company that the applicant worked at?&quot;,&quot;Technical Skills&quot;:&quot;Classify the technical skills of the applicant into title case keywords. Please return the response as a comma separated list.&quot;,&quot;Soft Skills&quot;:&quot;Classify the soft skills of the applicant into title case keywords. Please return the response as a comma separated list.&quot;}">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </p:ExtractDocumentDataWithDocumentData>
+    <Assign DisplayName="Assign - Path To Applicant Resume" sap:VirtualizedContainerService.HintSize="586,85" sap2010:WorkflowViewState.IdRef="Assign_22">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[str_ResumePath]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">[Environment.CurrentDirectory + "\Resumes\" + in_str_AppliedPosition  + "\" + idd_ExtractedDetails.Data.Name.Value.ToString.Replace(" ", "") + "_Resume.pdf"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[str_ResumePath]" DisplayName="Move Applicant Resume File From Attachments Folder To Resume Folder" sap:VirtualizedContainerService.HintSize="586,167" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[in_ilr_FileReference.LocalPath]" />
+    <Assign DisplayName="Assign - Complete Applicant Details" sap:VirtualizedContainerService.HintSize="586,87.5" sap2010:WorkflowViewState.IdRef="Assign_20">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:Object[]">[out_objarr_ApplicantDetails]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[{
+idd_ExtractedDetails.Data.Name.Value.ToString,
+idd_ExtractedDetails.Data.Email.Value.ToString,
+idd_ExtractedDetails.Data.PhoneNumber.Value.ToString,
+idd_ExtractedDetails.Data.HighestQualification.Value.ToString,
+idd_ExtractedDetails.Data.QualificationField.Value.ToString,
+idd_ExtractedDetails.Data.LatestCompany.Value.ToString,
+idd_ExtractedDetails.Data.LatestPosition.Value.ToString,
+in_str_AppliedPosition,
+idd_ExtractedDetails.Data.TechnicalSkills.Value.ToString,
+idd_ExtractedDetails.Data.SoftSkills.Value.ToString,
+"=HYPERLINK(""" + str_ResumePath + """,""" + idd_ExtractedDetails.Data.Name.Value.ToString + " Resume"")",
+strcol_PSOutput.First,
+str_ApplicationStatus
+}]</InArgument>
+      </Assign.Value>
+    </Assign>
+  </Sequence>
+</Activity>
