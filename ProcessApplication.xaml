@@ -6,7 +6,7 @@
     <x:Property Name="in_str_AppliedPosition" Type="InArgument(x:String)" />
     <x:Property Name="out_objarr_ApplicantDetails" Type="OutArgument(s:Object[])" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>775,3179.5</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1207,3179.5</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -19,18 +19,11 @@
       <x:String>System.Collections.ObjectModel</x:String>
       <x:String>System.Data</x:String>
       <x:String>System.Linq</x:String>
-      <x:String>System.Net.Mail</x:String>
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>System.Reflection</x:String>
-      <x:String>UiPath.Mail</x:String>
-      <x:String>UiPath.Mail.Outlook.Activities</x:String>
-      <x:String>UiPath.Shared.Activities</x:String>
-      <x:String>UiPath.Mail.Activities</x:String>
       <x:String>System.Runtime.Serialization</x:String>
-      <x:String>UiPath.Excel</x:String>
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Xml.Serialization</x:String>
-      <x:String>UiPath.Excel.Activities</x:String>
       <x:String>UiPath.DataTableUtilities</x:String>
       <x:String>UiPath.Platform.ResourceHandling</x:String>
       <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.DocumentClassification</x:String>
@@ -45,15 +38,6 @@
       <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.PDF</x:String>
       <x:String>System.Management.Automation</x:String>
       <x:String>System.Dynamic</x:String>
-      <x:String>System.Activities.Expressions</x:String>
-      <x:String>System.Diagnostics</x:String>
-      <x:String>System.Drawing</x:String>
-      <x:String>System.Xml</x:String>
-      <x:String>System.Xml.Linq</x:String>
-      <x:String>System.IO</x:String>
-      <x:String>UiPath.Core</x:String>
-      <x:String>GlobalVariablesNamespace</x:String>
-      <x:String>GlobalConstantsNamespace</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -254,7 +238,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <ui:InvokePowerShell x:TypeArguments="x:String" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Activate Python virtual environment &amp; run the resumeScorer.py Python script to obtain the match score based on resume content &amp; job description" CommandText="[&quot;&#xD;&#xA;Param(&#xD;&#xA;[Parameter(Mandatory=$true)] [string]$CurrentDirectory,&#xD;&#xA;[Parameter(Mandatory=$true)] [string]$PythonFileName,&#xD;&#xA;[Parameter(Mandatory=$true)] [string]$CV,&#xD;&#xA;[Parameter(Mandatory=$true)] [string]$JobDescription&#xD;&#xA;)&#xD;&#xA;cd $CurrentDirectory&#xD;&#xA;.venv\Scripts\activate&#xD;&#xA;python $PythonFileName &quot;&quot;&quot;&quot;$CV&quot;&quot;&quot;&quot; &quot;&quot;&quot;&quot;$JobDescription&quot;&quot;&quot;&quot;&#xD;&#xA;&quot;]" DisplayName="Invoke Power Shell" sap:VirtualizedContainerService.HintSize="586,148" sap2010:WorkflowViewState.IdRef="InvokePowerShell`1_2" IsScript="True" Output="[strcol_PSOutput]" PowerShellProcess="PowerShellCore">
+    <ui:InvokePowerShell x:TypeArguments="x:String" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Activate Python virtual environment &amp; run the resumeScorer.py Python script to obtain the match score based on resume content &amp; job description" CommandText="[&quot;&#xA;Param(&#xA;[Parameter(Mandatory=$true)] [string]$CurrentDirectory,&#xA;[Parameter(Mandatory=$true)] [string]$PythonFileName,&#xA;[Parameter(Mandatory=$true)] [string]$CV,&#xA;[Parameter(Mandatory=$true)] [string]$JobDescription&#xA;)&#xA;cd $CurrentDirectory&#xA;.venv\Scripts\activate&#xA;python $PythonFileName &quot;&quot;&quot;&quot;$CV&quot;&quot;&quot;&quot; &quot;&quot;&quot;&quot;$JobDescription&quot;&quot;&quot;&quot;&#xA;&quot;]" DisplayName="Invoke Power Shell" sap:VirtualizedContainerService.HintSize="586,148" sap2010:WorkflowViewState.IdRef="InvokePowerShell`1_2" IsScript="True" Output="[strcol_PSOutput]" PowerShellProcess="PowerShellCore">
       <ui:InvokePowerShell.Parameters>
         <InArgument x:TypeArguments="x:String" x:Key="CurrentDirectory">[Environment.CurrentDirectory]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="PythonFileName">resumeScorer.py</InArgument>

@@ -7,34 +7,21 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>947.5,2408.5</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1207,2411</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CheckForValidResume_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
-      <x:String>System.Activities.Expressions</x:String>
-      <x:String>System.Activities.Validation</x:String>
-      <x:String>System.Activities.XamlIntegration</x:String>
       <x:String>Microsoft.VisualBasic</x:String>
-      <x:String>Microsoft.VisualBasic.Activities</x:String>
       <x:String>System</x:String>
       <x:String>System.Collections</x:String>
       <x:String>System.Collections.Generic</x:String>
       <x:String>System.Collections.ObjectModel</x:String>
       <x:String>System.Data</x:String>
-      <x:String>System.Diagnostics</x:String>
-      <x:String>System.Drawing</x:String>
-      <x:String>System.IO</x:String>
       <x:String>System.Linq</x:String>
       <x:String>System.Net.Mail</x:String>
-      <x:String>System.Xml</x:String>
-      <x:String>System.Xml.Linq</x:String>
-      <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
-      <x:String>System.Windows.Markup</x:String>
-      <x:String>GlobalVariablesNamespace</x:String>
-      <x:String>GlobalConstantsNamespace</x:String>
       <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.DocumentClassification</x:String>
       <x:String>UiPath.Platform.ResourceHandling</x:String>
       <x:String>System.ComponentModel</x:String>
@@ -45,7 +32,6 @@
       <x:String>UiPath.IntelligentOCR.StudioWeb.Activities</x:String>
       <x:String>UiPath.DocumentProcessing.Contracts</x:String>
       <x:String>UiPath.DocumentUnderstanding.ML.Activities</x:String>
-      <x:String>System.Reflection</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -104,7 +90,7 @@
       <AssemblyReference>System.Private.Uri</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow checks if the attachment in a job application email contains a single resume in .pdf format. If the attachment does not meet the requirement, the job application is set to invalid. Only job applications that meets the requirement is set to valid." DisplayName="Sequence - Check For Valid Resume Attachment In Email Application" sap:VirtualizedContainerService.HintSize="957.5,2343.5" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow checks if the attachment in a job application email contains a single resume in .pdf format. If the attachment does not meet the requirement, the job application is set to invalid. Only job applications that meets the requirement is set to valid." DisplayName="Sequence - Check For Valid Resume Attachment In Email Application" sap:VirtualizedContainerService.HintSize="957.5,2346" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="uisad:DocumentData" Name="dd_DocumentClassification" />
     </Sequence.Variables>
@@ -114,15 +100,15 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <If Condition="[in_mmlist_MailMessage(0).Attachments.Count &lt;&gt; 1]" DisplayName="If - Email Does Not Have Only 1 Attachment" sap:VirtualizedContainerService.HintSize="895.5,2186" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[in_mmlist_MailMessage(0).Attachments.Count &lt;&gt; 1]" DisplayName="If - Email Does Not Have Only 1 Attachment" sap:VirtualizedContainerService.HintSize="895.5,2187" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="476,172.5" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence sap:VirtualizedContainerService.HintSize="476,173" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign DisplayName="Assign - bool_validApplication To False" sap:VirtualizedContainerService.HintSize="434,84.5" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <Assign DisplayName="Assign - bool_validApplication To False" sap:VirtualizedContainerService.HintSize="434,85" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Boolean">[out_bool_validResume]</OutArgument>
             </Assign.To>
