@@ -1,5 +1,5 @@
 {
-  "name": "Applicant Screener",
+  "name": "ApplicantScreener",
   "projectId": "8ab3d81f-017c-4ba0-ada1-47296b128982",
   "description": "Workflow that screens & shortlists applicants from job application emails in Outlook.",
   "main": "Main.xaml",
